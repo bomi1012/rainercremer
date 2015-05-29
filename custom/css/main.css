@@ -1,0 +1,118 @@
+@import url("mb_overrided.css");
+@import url("mb_fonts.css");
+
+.book-roman-art {
+    font-family: 'Book Roman';
+}
+.abadi-light {
+    font-family: 'Abadi MT Condensed Light';
+}
+
+img.logo-top {
+    height: 100px;
+    padding: 10px 0 10px 0;
+}
+.spacing-banner-text {
+    left: 35%;
+}
+.rotate-color{
+    color: #1ABC9C;
+}
+
+.background-banner {
+    background: url('../images/background/banner.jpeg'); 
+    background-size: cover;
+}
+.background-color-dark{
+    background-color: #383838;
+}
+
+.accordion-margin-top {
+    margin-top: 40px;
+}
+
+.background-image-index-about {
+    background-image: url('../images/background/about.jpeg'); 
+    background-size: cover; 
+    padding: 250px 0;
+}
+
+.background-image-index-leistungen {
+    background-image: url('../images/background/leistungen.jpeg'); 
+    background-size: cover; 
+    padding: 250px 0;
+}
+
+.section_about {
+    padding: 90px 0;
+}
+
+.border-form-control {
+    height: 48px;
+    padding: 8px 4px;
+    font-size: 21px;
+    letter-spacing: 1px;
+    background-color: transparent !important;
+    border-top: transparent;
+    border-right: transparent;
+    border-left: transparent;
+    border-bottom-width: 1px;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.textarea_3fields{
+    min-height: 195px;
+}
+.textarea_2fields{
+    min-height: 110px;
+}
+.textarea_1fields{
+    min-height: 70px;
+}
+
+img.login-log {
+    height: 150px;
+    padding-bottom: 20px;
+}
+
+.simple-input{
+    background: #1ABC9C;
+    border: none;
+    width: 100%;
+    margin-bottom: 5px;
+    color: white;
+}
+
+
+
+@media (min-width: 1300px){
+    .heading-block h1 {
+        font-size: 36px;
+    }
+}
+
+@media (min-width: 841px) and (max-width: 1299px){
+    .spacing-banner-text {
+        left: 5%;
+    }
+    .heading-block h1 {
+        font-size: 32px;
+    }
+    
+    .heading-block {
+        margin-top: 30%;
+    }
+}
+
+@media (max-width: 840px) {
+    .heading-block h1 {
+        visibility: hidden;
+        display: none;
+    }
+}
+/*
+@media (max-width: 991px) {
+    #logo {
+      display: none;
+    }
+}*/
