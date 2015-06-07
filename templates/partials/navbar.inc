@@ -5,7 +5,7 @@ $elements = $navi->getNavigationElements();
 $header = $elements[0]->getData_href(); // "header";
 $content_about_id = $elements[1]->getData_href(); // "content-about";
 $content_team_id = $elements[2]->getData_href();  // "content-team";
-//$content_service_id = $elements[3]->getData_href();  // "content-service";
+$content_service_id = $elements[3]->getData_href();  // "content-service";
 $content_contact_id = $elements[4]->getData_href();  // "content-contact";
 ?>
 <!-- Header ============================================= -->

@@ -32,6 +32,7 @@ class NavigationService {
         $this->_navigationElements[0] = new NavigationModel($this->createPath($index_path, $header), $header, IConsts::MENU_HOME);//TODO
         $this->_navigationElements[1] = new NavigationModel($this->createPath($index_path, $about), $about, IConsts::MENU_ABOUT);
         $this->_navigationElements[2] = new NavigationModel($this->createPath($index_path, $team), $team, IConsts::MENU_TEAM);
+        $this->_navigationElements[3] = new NavigationModel($this->createPath($index_path, $service), $service, IConsts::MENU_SERVICES);
        // $this->_navigationElements[3] = new NavigationModel($this->createAdress($service_path, $service), $service, IConsts::MENU_SERVICES);
         $this->_navigationElements[4] = new NavigationModel($this->createPath($index_path, $contact), $contact, IConsts::MENU_CONTACT);
 

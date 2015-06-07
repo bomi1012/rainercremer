@@ -12,7 +12,6 @@ if (isset($_POST["admin-submit"])) {
   //  $services->merge($_POST["adminSectionServices"], 0);
     
     $team->merge($_POST["adminSectionTeamMembers"], 0);
-   // $team->merge($_POST["adminSectionMember"], 1);
 }
 ?>
 

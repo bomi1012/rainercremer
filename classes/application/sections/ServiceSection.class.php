@@ -8,15 +8,50 @@ class ServiceSection extends AbstractSection {
     const TITLE_SUB = "title-sub";
     const SHORT_CONTENT = "short-content";
 
-    /**
-     * @var ARRAY 
-     */
-    private $_arrayServices;
+    private $_arrayServicesHSS = NULL;
 
     public function __construct($application) {
         parent::__construct($application);
+        $this->init();
     }
 
+    public function getServicesHSS() {
+        if ($this->_arrayServicesHSS == NULL) {
+            $this->init();
+        }
+        return $this->_arrayServicesHSS;
+    }
+    
+    
+
+    
+    private function init() {
+        $dbResult = $this->_application->getDB()->findContent("section-service", "content_service_list");
+        $this->_arrayServicesHSS = Util::unserialize64($dbResult[parent::CONTENT]);
+    } 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     public function merge($id, $do) {
         $array = $this->fillArrayUsingPOST($do);
         parent::merge($id, $array);
@@ -24,7 +59,7 @@ class ServiceSection extends AbstractSection {
 
     public function createPartWithServices($admin = FALSE) {
         $dbResult = $this->_application->getDB()->findContent("section-service", "content_service_list");
-        $this->_arrayServices = Util::unserialize64($dbResult[parent::CONTENT]);
+        $this->_arrayServicesHSS = Util::unserialize64($dbResult[parent::CONTENT]);
         if ($admin != TRUE) {
             $this->printSectionServices();
         } else {
@@ -50,12 +85,12 @@ class ServiceSection extends AbstractSection {
     }
 
     private function printSectionServices() {
-        foreach ($this->_arrayServices as $key => $value) {
+        foreach ($this->_arrayServicesHSS as $key => $value) {
             $subTitle = $this->_html->content($value[self::TITLE_SUB])->create_span("subtitle")->get();
             $string_title = $this->_html->content($value[self::TITLE] . " " . $subTitle)->create_h("h3")->get();
 
             $col_last = "";
-            $el = end($this->_arrayServices);
+            $el = end($this->_arrayServicesHSS);
             if ($el[self::NUMBER] == $value[self::NUMBER]) {
                 $col_last = "col_last";
             }
@@ -75,9 +110,9 @@ class ServiceSection extends AbstractSection {
     }
 
     private function printAdminSectionServices($id) {
-        foreach ($this->_arrayServices as $key => $value) {
+        foreach ($this->_arrayServicesHSS as $key => $value) {
             $col_last = "";
-            $el = end($this->_arrayServices);
+            $el = end($this->_arrayServicesHSS);
             if ($el[self::NUMBER] == $value[self::NUMBER]) {
                 $col_last = "col_last";
             }

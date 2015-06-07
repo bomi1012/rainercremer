@@ -45,21 +45,21 @@
 ?>
 <section id="section-team"  class="background-color-dark dark">
     <div class="content-wrap">
-        <div id="content-team" class="page-section container clearfix"> 
-            <div class="col_two_third">
-                <div class="heading-block fancy-title nobottomborder title-bottom-border">
-                    <h4>Unser <span>Team</span></h4>
-                </div>           
+        <div id="<?php Util::to_print($content_team_id); ?>" class="page-section container clearfix"> 
+            <div class="col_two_third">                
+                <?php
+                $html->content("Unser <span>Team</span>")->create_h("h4")
+                        ->create_div("heading-block fancy-title nobottomborder title-bottom-border")->out();
+                ?>        
             </div>
         </div>
         <div class="clear"></div>
         <?php
-        if ($context->getParamPage() == AdministrationManager::KEY_ROLE_ADMIN) {
-            $team->createPartWithTeamMembers(TRUE);
-        } else {
-            $team->createPartWithTeamMembers();
-        }
+        if ($admin->isAdmin()) { $team->createPartWithTeamMembers(TRUE);  } 
+        else { $team->createPartWithTeamMembers(); }
         ?>
     </div>
-    <div class="parallax nobottommargin background-image-index-about" data-stellar-background-ratio="0.4"></div>
+    <?php if (!$admin->isAdmin()) { ?>
+        <div class="parallax nobottommargin background-image-index-about" data-stellar-background-ratio="0.4" />
+    <?php } ?>
 </section>

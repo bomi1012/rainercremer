@@ -83,6 +83,9 @@ img.login-log {
     color: white;
 }
 
+.postcontent-mb {
+    width: 100%;
+}
 
 
 @media (min-width: 1300px){

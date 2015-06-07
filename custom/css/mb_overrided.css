@@ -54,3 +54,7 @@
 .modal-title {
     color: #1ABC9C !important;
 }
+
+.tab-pane {
+    padding-left: 40px;
+}

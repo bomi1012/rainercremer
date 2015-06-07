@@ -33,6 +33,9 @@ interface IConsts {
     const KONTAKDATEN = "Kontaktinformation";
     const MONTAGESERVICE = "Montageservice";
      
+    const HEIZUNG = "Heizung";
+    const SANITARE = "Sanitäre";
+    const SOLAR = "Solar";
     const NAME_RAINER_CREMER = "Rainer Cremer";    
     const SLIDER_TEXT_ROTATE = "Heizung|Sanitär|Solar";
     const OEFFNUNGSZEITEN = "Öffnungszeiten";
