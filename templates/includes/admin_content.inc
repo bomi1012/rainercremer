@@ -3,12 +3,15 @@
 //ABOUT_SECTION
 $about_left_text = $db->findContent("section-about", "content_about_left");
 $about_bottom_text = $db->findContent("section-about", "content_about_bottom");
+$service_bottom_text = $db->findContent("section-service", "content_service_bottom");
 
 //TEAM SECTION
 if (isset($_POST["admin-submit"])) {
     $about_left_text["content"] = $db->mergeContent($about_left_text["id"], $_POST["content_about_left"], $about_left_text["content"]);
     $about_bottom_text["content"] = $db->mergeContent($about_bottom_text["id"], $_POST["content_about_bottom"], $about_bottom_text["content"]);
 
+    $service_bottom_text["content"] = $db->mergeContent($service_bottom_text["id"], $_POST["content_service_bottom"], $service_bottom_text["content"]);
+    
     $services->merge($_POST["adminSectionServices"], 0);
     
     $team->merge($_POST["adminSectionTeamMembers"], 0);

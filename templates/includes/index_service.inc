@@ -33,6 +33,8 @@
 //);
 //
 //$toDatabse = base64_encode(serialize($a)); 
+
+$slogan_service = $db->findContent("section-service", "content_service_bottom");
 ?>
 <section class="background-color-dark dark" >
     <div class="content-wrap">
@@ -125,7 +127,17 @@
       <div class="section section_about nomargin noborder bgcolor dark" data-stellar-background-ratio="0.3">
         <div id="content_about_bottom" class="heading-block center nobottomborder nobottommargin">
             <?php
-            $html->content("klsfjkldsfklsfjklsfjskldf")->create_h("h2")->out();
+            if ($admin->isAdmin() == FALSE) {
+                $html->content($slogan_service["content"])->create_h("h2")->out();
+            } else {
+                ?>
+                <input type="text" 
+                   id="content_service_bottom-id" 
+                   name="content_service_bottom" 
+                   value="<?php $html->content($service_bottom_text["content"])->out(); ?>" style="width: 80%"
+                   class="required border-form-control" />
+                <?php                
+            }            
             ?>
         </div>
     </div>
