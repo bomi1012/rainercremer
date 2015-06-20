@@ -9,6 +9,10 @@ class ServiceSection extends AbstractSection {
     const SHORT_CONTENT = "short-content";
 
     private $_arrayServicesHSS = NULL;
+    private $_id;
+    public function getId() {
+        return $this->_id;
+    }
 
     public function __construct($application) {
         parent::__construct($application);
@@ -28,6 +32,7 @@ class ServiceSection extends AbstractSection {
     private function init() {
         $dbResult = $this->_application->getDB()->findContent("section-service", "content_service_list");
         $this->_arrayServicesHSS = Util::unserialize64($dbResult[parent::CONTENT]);
+        $this->_id = $dbResult[parent::ID];
     } 
     
     
@@ -55,6 +60,7 @@ class ServiceSection extends AbstractSection {
     public function merge($id, $do) {
         $array = $this->fillArrayUsingPOST($do);
         parent::merge($id, $array);
+        $this->_arrayServicesHSS = NULL;
     }
 
     public function createPartWithServices($admin = FALSE) {

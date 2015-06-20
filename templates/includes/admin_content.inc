@@ -9,7 +9,7 @@ if (isset($_POST["admin-submit"])) {
     $about_left_text["content"] = $db->mergeContent($about_left_text["id"], $_POST["content_about_left"], $about_left_text["content"]);
     $about_bottom_text["content"] = $db->mergeContent($about_bottom_text["id"], $_POST["content_about_bottom"], $about_bottom_text["content"]);
 
-  //  $services->merge($_POST["adminSectionServices"], 0);
+    $services->merge($_POST["adminSectionServices"], 0);
     
     $team->merge($_POST["adminSectionTeamMembers"], 0);
 }
@@ -24,7 +24,7 @@ if (isset($_POST["admin-submit"])) {
     </div>
     <?php include INC_PATH . 'admin_about.inc'; ?>
     <?php include INC_PATH . 'index_team.inc'; ?>
-    <?php //include INC_PATH . 'index_service.inc'; ?>
+    <?php include INC_PATH . 'index_service.inc'; ?>
 </form>
 
 
